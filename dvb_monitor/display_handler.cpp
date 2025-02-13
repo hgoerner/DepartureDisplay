@@ -1,7 +1,6 @@
 #include "display_handler.h"
 #include <GxEPD2_BW.h>
 #include <Adafruit_GFX.h>
-#include <Arduino.h>
 #include <ArduinoJson.h>  // Ensure this is included
 // Define the display
 #define EINK_CS 5
@@ -49,8 +48,13 @@ void displayDepartures(const char* name1, const char* name2, JsonDocument& doc1,
         int yPosition1 = 40;
         for (JsonArray departure : doc1.as<JsonArray>()) {
             if (yPosition1 > 280) break;
+            
             String line = departure[0].as<String>();
             String direction = departure[1].as<String>();
+            // Begrenze die Länge der Richtung auf 12 Zeichen
+            if (direction.length() > 12) {
+              direction = direction.substring(0, 12);
+            }
             int minutes = departure[2].as<int>();
             display.setCursor(10, yPosition1);
             display.printf("%s %s %d m", line.c_str(), direction.c_str(), minutes);
@@ -63,6 +67,10 @@ void displayDepartures(const char* name1, const char* name2, JsonDocument& doc1,
             if (yPosition2 > 280) break;
             String line = departure[0].as<String>();
             String direction = departure[1].as<String>();
+             // Begrenze die Länge der Richtung auf 12 Zeichen
+            if (direction.length() > 12) {
+              direction = direction.substring(0, 12);
+            }
             int minutes = departure[2].as<int>();
             display.setCursor(158, yPosition2);
             display.printf("%s %s %d m", line.c_str(), direction.c_str(), minutes);
