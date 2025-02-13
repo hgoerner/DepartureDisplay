@@ -11,10 +11,10 @@ void setup() {
     setupWiFi();
     setupDisplay();
     setupOTA();
-    setupSleep();
     setupButton();
-
     Serial.println("Setup complete!");
+
+    
 }
 
 void loop() {
@@ -24,6 +24,7 @@ void loop() {
     if (millis() - lastFetch >= fetchInterval) {
         lastFetch = millis();
         JsonDocument doc1, doc2;
+
 
         if (fetchHaltestellenData(
                 "http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do?hst=Oschatzer%20Straße&vz=5&ort=Dresden&lim=10",

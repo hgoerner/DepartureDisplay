@@ -5,9 +5,6 @@
 
 #define SLEEP_DURATION 300000000ULL  // Microseconds
 
-void setupSleep() {
-    esp_sleep_enable_timer_wakeup(SLEEP_DURATION);
-}
 
 void handleSleep() {
     static unsigned long previousMillisSleep = 0;
