@@ -1,5 +1,6 @@
 #include "ota_update.h"
 #include <ArduinoOTA.h>
+#include <WiFi.h>
 
 void setupOTA() {
     ArduinoOTA.begin();

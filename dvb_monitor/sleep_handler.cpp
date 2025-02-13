@@ -1,4 +1,5 @@
 #include "sleep_handler.h"
+#include <Arduino.h>  // This fixes 'millis()' not declared
 #include "display_handler.h"
 #include <esp_sleep.h>
 
