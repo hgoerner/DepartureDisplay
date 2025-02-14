@@ -1,6 +1,7 @@
 #include "wifi_setup.h"
 #include <WiFi.h>
 
+// WLAN-Konfiguration
 const char* ssid = "";
 const char* password = "";
 

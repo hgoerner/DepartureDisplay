@@ -20,5 +20,6 @@ void handleSleep() {
 }
 
 void goToDeepSleep() {
-    esp_deep_sleep_start();
+    esp_light_sleep_start();
+    //esp_deep_sleep_start();
 }

@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
     static unsigned long lastFetch = 0;
-    const unsigned long fetchInterval = 30000;  // Fetch data every 30 sec
+    const unsigned long fetchInterval = 60000;  // Fetch data every 30 sec
 
     if (millis() - lastFetch >= fetchInterval) {
         lastFetch = millis();
