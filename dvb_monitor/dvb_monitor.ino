@@ -30,11 +30,11 @@ void loop() {
                 "http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do?hst=Oschatzer%20Straße&vz=5&ort=Dresden&lim=10",
                 "http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do?hst=Liststraße&vz=5&ort=Dresden&lim=10",
                 doc1, doc2)) {
-            displayDepartures("Oschatzer Straße", "Liststraße", doc1, doc2);
+            displayDepartures("Oschatzer Strasse", "Liststrasse", doc1, doc2);
         }
     }
 
-    handleSleep();
     handleButton();
     handleOTA();
+    handleWakingup();
 }
