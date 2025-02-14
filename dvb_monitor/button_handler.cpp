@@ -27,6 +27,5 @@ void handleButton() {
 void handleWakingup(){
     if (digitalRead(WAKEUP_PIN) == LOW) {
         Serial.println("Button pressed! Waking up...");
-        displayMessage("Waking up...");
 }
 }

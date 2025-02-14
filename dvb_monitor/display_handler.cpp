@@ -22,7 +22,7 @@ void displayMessage(const char* message) {
         display.fillScreen(GxEPD_WHITE);
         display.setCursor(10, 20);
         display.setTextColor(GxEPD_BLACK);
-        display.setTextSize(1);
+        display.setTextSize(3);
         display.println(message);
     } while (display.nextPage());
 }
