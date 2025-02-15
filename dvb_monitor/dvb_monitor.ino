@@ -15,7 +15,7 @@ void setup() {
     setupOTA();
     setupButton();
     Serial.println("Setup complete!");
-    
+    etColor(0,0,0); //Grün
 }
 
 void loop() {
@@ -25,7 +25,7 @@ void loop() {
     if (millis() - lastFetch >= fetchInterval) {
         lastFetch = millis();
         JsonDocument doc1, doc2;
-        setColor(0,20,0); //Grün
+        setColor(0,0,0); //Grün
 
         if (fetchHaltestellenData(
                 "http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do?hst=Oschatzer%20Straße&vz=5&ort=Dresden&lim=6",
@@ -38,7 +38,7 @@ void loop() {
     handleButton();
     handleOTA();
     handleWakingup();
-    breathingEffect();  //50 delay 100
+    breathingEffect();  //50 delay 20
 
 
 }

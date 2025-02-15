@@ -30,6 +30,5 @@ void handleWakingup(){
     if (digitalRead(WAKEUP_PIN) == LOW) {
         setColor(220,141,22); //Orange
         Serial.println("Button pressed! Waking up...");
-        displayMessage("Waking up from sleep...");
 }
 }
