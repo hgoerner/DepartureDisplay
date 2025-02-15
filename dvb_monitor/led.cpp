@@ -21,7 +21,7 @@ void setColor(int R, int G, int B){
 
 void ledColorPlay() {
     int brightness = 255;  // Max brightness
-    int speed = 10;        // Delay between color changes
+    int speed = 20;        // Delay between color changes
 
     // 🌈 Rainbow transition loop
     for (int i = 0; i < 256; i++) {
