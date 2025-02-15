@@ -17,7 +17,7 @@ void setupButton() {
 
 void handleButton() {
     if (digitalRead(BUTTON_PIN) == LOW) {
-        setColor(222,227,15);  //Gelb 
+        setColor(30,30,2);  //Gelb 
         Serial.println("Button pressed! Going to deep sleep...");
         displayMessage("Going to sleep...");
         delay(1000);
@@ -28,7 +28,7 @@ void handleButton() {
 
 void handleWakingup(){
     if (digitalRead(WAKEUP_PIN) == LOW) {
-        setColor(220,141,22); //Orange
+        setColor(10,30,30); //Orange
         Serial.println("Button pressed! Waking up...");
 }
 }
