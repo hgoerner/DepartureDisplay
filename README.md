@@ -89,4 +89,4 @@ The ESP32 will now store these settings and restart. If successful, it will auto
 
 ### **Final product**
 
-![DepartureDisplay](hardware\image.jpg)
+![DepartureDisplay](hardware/image.jpg)
