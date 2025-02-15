@@ -2,8 +2,8 @@
 #include <WiFi.h>
 
 // WLAN-Konfiguration
-const char* ssid = "FRITZ!Box 7590 WO";
-const char* password = "1337Moritzburger26!";
+const char* ssid = "";
+const char* password = "";
 
 void setupWiFi() {
     WiFi.begin(ssid, password);
