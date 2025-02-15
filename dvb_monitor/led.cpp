@@ -63,17 +63,17 @@ void fireEffect() {
 
 
 void breathingEffect() {
-    int speed = 4;  // Speed of breathing
+    int speed = 5;  // Speed of breathing
 
     // Fade in
     for (int i = 0; i <= 50; i += speed) {
         setColor(0, 0, i);  // Blue breathing effect
-        delay(50);
+        delay(20);
     }
 
     // Fade out
     for (int i = 50; i >= 0; i -= speed) {
         setColor(0, 0, i);
-        delay(50);
+        delay(20);
     }
 }
