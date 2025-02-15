@@ -1,5 +1,6 @@
 #include "button_handler.h"
-#include <Arduino.h>  // This fixes 'INPUT_PULLUP' error
+#include <Arduino.h>  
+#include "led.h"
 #include "display_handler.h"
 #include "sleep_handler.h"
 #include "driver/rtc_io.h"
@@ -16,6 +17,7 @@ void setupButton() {
 
 void handleButton() {
     if (digitalRead(BUTTON_PIN) == LOW) {
+        setColor(222,227,15);  //Gelb 
         Serial.println("Button pressed! Going to deep sleep...");
         displayMessage("Going to sleep...");
         delay(1000);
@@ -26,6 +28,8 @@ void handleButton() {
 
 void handleWakingup(){
     if (digitalRead(WAKEUP_PIN) == LOW) {
+        setColor(220,141,22); //Orange
         Serial.println("Button pressed! Waking up...");
+        displayMessage("Waking up from sleep...");
 }
 }
