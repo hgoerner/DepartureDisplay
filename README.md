@@ -12,7 +12,7 @@ This project is an **ESP32-based departure monitor** that retrieves real-time pu
 
 ## Getting Started
 
-### ** Requirements**
+### **Requirements**
 #### **Hardware Components**
 - **ESP32-WROOM**
 - **2.9" E-Ink Display (GxEPD2 Library)**
@@ -85,6 +85,10 @@ The ESP32 will now store these settings and restart. If successful, it will auto
               │ GPIO 14 --->  Blue (via 220Ω Resistor)
               │
              GND
+
+### **3D-Print**
+
+
 
 
 ### **Final product**
