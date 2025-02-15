@@ -1,22 +1,51 @@
-#include "display_handler.h"
+
+#include <Arduino.h>
 #include <GxEPD2_BW.h>
 #include <Adafruit_GFX.h>
-#include <ArduinoJson.h>  // Ensure this is included
-// Define the display
+#include "display_handler.h"
+
+
 #define EINK_CS 5
 #define EINK_DC 17
 #define EINK_RST 16
 #define EINK_BUSY 4
 
+const char* station1 = "Oschatzer Strasse";
+const char* station2 = "Liststrasse";
+
 GxEPD2_BW<GxEPD2_290_T94_V2, GxEPD2_290_T94_V2::HEIGHT> display(GxEPD2_290_T94_V2(EINK_CS, EINK_DC, EINK_RST, EINK_BUSY));
+
+void displayStationNames(const char* name1, const char* name2) {
+    display.setFullWindow();
+    display.firstPage();
+    do {
+        display.fillScreen(GxEPD_WHITE);
+        display.setTextColor(GxEPD_BLACK);
+        display.setTextSize(1);
+
+        // **Stationsnamen einmalig anzeigen**
+        display.setCursor(10, 10);
+        display.println(name1);
+        display.setCursor(158, 10);
+        display.println(name2);
+
+        // **Linien für das Layout**
+        display.drawLine(0, 30, 295, 30, GxEPD_BLACK);
+        display.drawLine(148, 0, 148, 295, GxEPD_BLACK);
+
+    } while (display.nextPage());
+
+    display.hibernate();
+}
 
 void setupDisplay() {
     display.init();
     display.setRotation(1);
+    displayStationNames(station1, station2);
 }
 
 void displayMessage(const char* message) {
-    display.setFullWindow();
+    display.setPartialWindow(0, 0, display.width(), display.height());
     display.firstPage();
     do {
         display.fillScreen(GxEPD_WHITE);
@@ -27,20 +56,13 @@ void displayMessage(const char* message) {
     } while (display.nextPage());
 }
 
-void displayDepartures(const char* name1, const char* name2, JsonDocument& doc1, JsonDocument& doc2) {
-    display.setFullWindow();
+void displayDepartures(JsonDocument& doc1, JsonDocument& doc2) {
+    display.setPartialWindow(0, 35, display.width(), display.height() - 35);  // Update nur Abfahrtsbereich
     display.firstPage();
     do {
         display.fillScreen(GxEPD_WHITE);
         display.setTextColor(GxEPD_BLACK);
         display.setTextSize(1);
-
-        // Draw station names
-        display.setCursor(10, 10);
-        display.println(name1);
-        display.setCursor(158, 10);
-        display.println(name2);
-
         display.drawLine(0, 30, 295, 30, GxEPD_BLACK);
         display.drawLine(148, 0, 148, 295, GxEPD_BLACK);
 

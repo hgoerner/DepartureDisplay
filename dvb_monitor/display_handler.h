@@ -6,5 +6,6 @@
 void setupDisplay();
 void displayMessage(const char* message);
 void clearDisplay();
-void displayDepartures(const char* name1, const char* name2, JsonDocument& doc1, JsonDocument& doc2);
+void displayDepartures(JsonDocument& doc1, JsonDocument& doc2);
+void displayStationNames(const char* name1, const char* name2);
 #endif
