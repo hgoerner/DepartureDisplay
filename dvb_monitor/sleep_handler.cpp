@@ -12,7 +12,9 @@ void handleSleep() {
         displayMessage("Going to deep sleep after 5 min");
         delay(1000);
         previousMillisSleep = millis();  // ✅ Update the last sleep time
+        clearDisplay();
         goToDeepSleep();
+        
     }
 }
 

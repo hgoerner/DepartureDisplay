@@ -34,7 +34,7 @@ void loop() {
             displayDepartures(doc1, doc2);
         }
     }
-
+    handleSleep();
     handleButton();
     handleOTA();
     handleWakingup();
