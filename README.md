@@ -1,4 +1,4 @@
-# ESP32 Smart Departure Monitor
+# DVB-Departure Monitor
 
 This project is an **ESP32-based departure monitor** that retrieves real-time public transport departure times and displays them on an **E-Ink display**. The ESP32 automatically connects to Wi-Fi.
 
