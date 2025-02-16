@@ -2,6 +2,8 @@
 
 This project is an **ESP32-based departure monitor** that retrieves real-time public transport departure times and displays them on an **E-Ink display**. The ESP32 automatically connects to Wi-Fi.
 
+![DepartureDisplay](hardware/image.jpg)
+
 ---
 
 ## Features
@@ -89,8 +91,5 @@ The ESP32 will now store these settings and restart. If successful, it will auto
 ### **3D-Print**
 
 
+![3D-Print Model](hardware/image2.jpg)
 
-
-### **Final product**
-
-![DepartureDisplay](hardware/image.jpg)
