@@ -3,7 +3,6 @@
 #include "led.h"
 #include "display_handler.h"
 #include "sleep_handler.h"
-#include "driver/rtc_io.h"
 
 #define BUTTON_PIN 32
 #define WAKEUP_PIN GPIO_NUM_33
